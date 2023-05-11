@@ -1,0 +1,39 @@
+
+    
+    
+    
+    <div class="border border-dark shadow-md">
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+      <div class="row mt-3" style="justify-content: center;">
+        <div class="col-md-6" >
+        <app-input label="Ad Soyad" [control]="cardForm.get('name')"></app-input>
+        <app-input label="Kart Numarası" [control]="cardForm.get('cardNumber')"></app-input>
+      </div>
+      <div class="row mt-3 justify-content-center">
+      <!-- <div class="col-md-3" ></div> -->
+      <div class="col-md-3 mx-1 " >
+        <app-input label="Son kullanma tarihi" [control]="cardForm.get('expiration')"></app-input>
+      </div>
+      <div class="col-md-3 mx-1 " style="justify-content: center;" >
+        <app-input label="Güvenlik Kodu" [control]="cardForm.get('securityCode')"></app-input>
+      </div>
+    </div>
+    
+        <div class="row my-3 justify-content-center">
+          <div class="col-md-1 mx-2 ">
+            <button class="btn btn-dark" (click)="ResetForm()" [disabled]="cardForm.invalid" type="button">Temizle</button>
+          </div>
+          <div class="col-md-1 mx-2 ">
+            <button class="btn btn-primary" [disabled]="cardForm.invalid" type="submit">Kaydet</button>
+          </div>
+        </div>
+      </div>
+      
+      
+    </form>
+    </div>
+   
+    <!-- <div>Form içeriği: {{cardForm.value | json}}</div>
+    <div>Form valid mi: {{cardForm.valid ? "evet" :"hayır"}}</div>
+    <div>Form hataları: {{ cardForm.get('name')?.errors | json}}</div> -->
+    
